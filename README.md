@@ -1,1 +1,1 @@
-Korea Univ. OS term project
+Korea Univ. OS term project - CPU scheduler
