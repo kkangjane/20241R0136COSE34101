@@ -84,5 +84,5 @@ static int	Do_CPU(int real)
 		return Do_CPU(0);
 	}
 	// 2.3. 기존 프로세스 CPU 계속 유지
-	Do_CPU(1);
+	return Do_CPU(1);
 }

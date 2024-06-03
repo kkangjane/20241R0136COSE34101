@@ -41,12 +41,8 @@ void	print_result(int cpu_chart[], int io_chart[], int cpu_check, int io_check, 
 	
 	if (cpu_check != 0)
 		printf("CPU operation scheduling failed\n");
-	else
-		printf("CPU operation scheduling succeed\n");
 	if (io_check != 0)
 		printf("I/O operation scheduling failed\n");
-	else
-		printf("I/O operation scheduling succeed\n");
 	
 	for (int i = 0; i < num; i++)
 	{
