@@ -7,9 +7,9 @@ int main(void)
    
 	printf("How many process do you want?\n> ");
 	scanf("%d", &num);
-	if (num > MAX_PNUM)
+	if (num > MAX_PNUM || num <= 0)
 	{
-		printf("Too big. Let's make %d processes\n", MAX_PNUM);
+		printf("I can't. Let's make %d processes\n", MAX_PNUM);
 		num = MAX_PNUM;
 	}
 
