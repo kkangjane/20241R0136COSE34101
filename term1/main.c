@@ -5,7 +5,7 @@ int main(void)
 	int	type;
 	char s;
    
-	printf("How many process do you want?\n> ");
+	printf("How many processes do you want?\n> ");
 	scanf("%d", &num);
 	if (num > MAX_PNUM || num <= 0)
 	{
@@ -57,11 +57,11 @@ int main(void)
 			Config();
 			RR_scheduling();
 		}
-			else
-			{
-				printf("finished\n");
-				return 0;
-			}
+		else
+		{
+			printf("finished\n");
+			return 0;
+		}
 	}
 	return 0;
 }
