@@ -14,7 +14,7 @@ void	Preemptive_Priority_scheduling()
 	while (1)
 	{
         arrive_process(t);
-		if (terminate_check(t))
+		if (complete_check(t))
 			break;
 
 		cpu_chart[t] = Do_CPU(0);

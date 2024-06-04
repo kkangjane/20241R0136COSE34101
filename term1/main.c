@@ -5,14 +5,7 @@ int main(void)
 	int	type;
 	char s;
    
-	printf("How many processes do you want?\n> ");
-	scanf("%d", &num);
-	if (num > MAX_PNUM || num <= 0)
-	{
-		printf("I can't. Let's make %d processes\n", MAX_PNUM);
-		num = MAX_PNUM;
-	}
-
+    get_option();
     Create_Process();
 
 	while(1)

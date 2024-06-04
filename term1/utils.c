@@ -158,3 +158,38 @@ void update_waiting_time(void)
 		p_list[j].waiting_time += 1;
 	}
 }
+
+void	get_option(void)
+{
+	printf("How many processes do you want?\n> ");
+	scanf("%d", &num);
+	if (num > MAX_PNUM || num <= 0)
+	{
+		printf("I can't. Let's make %d processes\n", MAX_PNUM);
+		num = MAX_PNUM;
+	}
+
+	printf("range of CPU burst time > ");
+	scanf("%d", &cpu_range);
+	if (cpu_range <= 0)
+	{
+		printf("Too small. CPU_range=>10\n");
+		cpu_range = 10;
+	}
+
+	printf("range of I/O burst time > ");
+	scanf("%d", &io_range);
+	if (io_range <= 0)
+	{
+		printf("Too small. I/O_range=>10\n");
+		io_range = 10;
+	}
+
+	printf("quantum time > ");
+	scanf("%d", &quantum_time);
+	if (quantum_time > 10 || quantum_time <= 0)
+	{
+		printf("I can't. quantum_time=2\n");
+		quantum_time = 2;
+	}
+}

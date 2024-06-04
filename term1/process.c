@@ -6,8 +6,8 @@ void	Create_Process(void)
 	make_pid();
 	for (int i = 0; i < num; i++)
 	{
-		p_list[i].CPU_burst_time = rand() % 5 + 2;
-		p_list[i].IO_burst_time = rand() % 5;
+		p_list[i].CPU_burst_time = rand() % cpu_range + 1;
+		p_list[i].IO_burst_time = rand() % io_range + 1;
 		p_list[i].arrival_time = rand() % 10;
 		p_list[i].priority = rand() % 10;
 		p_list[i].waiting_time = 0;
@@ -89,7 +89,7 @@ void    arrive_process(int time)
     }
 }
 
-int	terminate_check(int time)
+int	complete_check(int time)
 {
     // CPU 실행했던 프로세스 끝나면 running_cpu 비우기
 	if (running_cpu != -1 && 

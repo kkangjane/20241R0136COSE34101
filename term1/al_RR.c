@@ -14,7 +14,7 @@ void	RR_scheduling()
 	while (1)
 	{
 		arrive_process(t);
-		if (terminate_check(t))
+		if (complete_check(t))
 			break;
 
 		cpu_chart[t] = Do_CPU(0);
@@ -69,13 +69,12 @@ static int	Do_CPU(int real)
 	if (p_list[running_cpu].CPU_rest == 1 && p_list[running_cpu].IO_rest)
 	{
 		p_list[running_cpu].rr_time = 0;
-		queue_push(&waiting_queue, running_cpu);
-		running_cpu = -1;
+		queue_push(&waiting_queue, running_cpu);		running_cpu = -1;
 		return Do_CPU(0);
 	}
 	
 	// 2.2. quantum time 2로 채우면 ready나 waiting queue로 보내고 새로운 프로세스 가져오기
-	if (p_list[running_cpu].rr_time == 2)
+	if (p_list[running_cpu].rr_time == quantum_time)
 	{
 		if (rand() % 2 && waiting_queue.size < 1 && p_list[running_cpu].IO_rest)
 			queue_push(&waiting_queue, running_cpu);

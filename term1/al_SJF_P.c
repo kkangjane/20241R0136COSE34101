@@ -14,7 +14,7 @@ void	Preemptive_SJF_scheduling()
 	while (1)
 	{
         arrive_process(t);
-		if (terminate_check(t))
+		if (complete_check(t))
 			break;
 
 		cpu_chart[t] = Do_CPU(0);
@@ -37,7 +37,7 @@ static int	Do_CPU(int real)
 	srand((unsigned)time(0));
 	if (real)
 	{
-		if (running_cpu >= 0)
+		if (running_cpu >= 0 )
 			p_list[running_cpu].CPU_rest -= 1;
 		return running_cpu;
 	}

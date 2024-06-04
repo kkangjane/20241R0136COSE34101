@@ -52,6 +52,9 @@ t_queue		terminated_queue;
 
 int			running_cpu;
 int			running_io;
+int 		cpu_range;
+int			io_range;
+int			quantum_time;
 int         num; // process 개수
 
 // schedule.c
@@ -67,7 +70,7 @@ void	Create_Process(void);
 void	make_pid(void);
 void	Config(void);
 void    arrive_process(int time);
-int	    terminate_check(int time);
+int	    complete_check(int time);
 void	random_io_out(void);
 int		Do_IO(int real);
 
@@ -84,5 +87,5 @@ int		queue_pop_SJF(int pop);
 int		queue_pop_priority(int pop);
 void	print_job_queue(void);
 void	update_waiting_time(void);
-
+void	get_option(void);
 #endif
