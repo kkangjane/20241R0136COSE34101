@@ -8,8 +8,8 @@ void	Create_Process(void)
 	{
 		p_list[i].CPU_burst_time = rand() % 5 + 2;
 		p_list[i].IO_burst_time = rand() % 5;
-		p_list[i].arrival_time = rand() % 5;
-		p_list[i].priority = rand() % (num * 2);
+		p_list[i].arrival_time = rand() % 10;
+		p_list[i].priority = rand() % 10;
 		p_list[i].waiting_time = 0;
 	}
 	print_processes();
