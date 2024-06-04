@@ -81,5 +81,5 @@ void	queue_push(t_queue *queue, int process_idx);
 int		queue_pop(t_queue *queue);
 int		queue_pop_SJF(int pop);
 int		queue_pop_priority(int pop);
-
+void	print_job_queue(void);
 #endif

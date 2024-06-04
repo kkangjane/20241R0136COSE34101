@@ -135,3 +135,18 @@ int	queue_pop_SJF(int pop)
 	ready_queue.size -= 1;
 	return cpu;
 }
+
+void	print_job_queue(void)
+{
+	int i;
+
+	printf("---------------------------------------------------------------\n");
+	printf("| idx |  pid  | priority | CPU time | I/O time | arrival time |\n");
+	printf("---------------------------------------------------------------\n");
+	for (int j = 0; j < num; j++)
+	{
+		i = job_queue.queue[j];
+		printf("|  %d  |  %4d |   %3d    |    %2d    |    %2d    |      %2d      |\n", i, p_list[i].pid, p_list[i].priority, p_list[i].CPU_burst_time, p_list[i].IO_burst_time, p_list[i].arrival_time);
+	}
+	printf("---------------------------------------------------------------\n");
+}

@@ -72,6 +72,8 @@ void	Config(void)
 			}
 		}
 	}
+	printf("\n                      < JOB QUEUE >\n");
+	print_job_queue();
 }
 
 void    arrive_process(int time)
