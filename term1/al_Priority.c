@@ -20,10 +20,10 @@ void	Priority_scheduling()
 		cpu_chart[t] = Do_CPU(0);
 		if (cpu_chart[t] >= 0)
 			cpu_check -= 1;
-		
 		io_chart[t] = Do_IO(0);
 		if (io_chart[t] >= 0)
 			io_check -= 1;
+
 		update_waiting_time();
 		random_io_out();
 

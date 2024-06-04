@@ -14,9 +14,9 @@ void	RR_scheduling()
 	while (1)
 	{
 		arrive_process(t);
-		terminate_check(t);
-		if (terminated_queue.size == num)
+		if (terminate_check(t))
 			break;
+
 		cpu_chart[t] = Do_CPU(0);
 		if (cpu_chart[t] >= 0)
 			cpu_check -= 1;
