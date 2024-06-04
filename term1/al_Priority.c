@@ -26,7 +26,6 @@ void	Priority_scheduling()
 
 		update_waiting_time();
 		random_io_out();
-
 		t++;
 	}
 	print_result(cpu_chart, io_chart, cpu_check, io_check, t);
