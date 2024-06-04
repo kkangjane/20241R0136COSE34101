@@ -49,9 +49,7 @@ void	print_result(int cpu_chart[], int io_chart[], int cpu_check, int io_check, 
 		turnarround_time += p_list[i].terminated_time;
 		turnarround_time -= p_list[i].arrival_time;
 
-		waiting_time += p_list[i].terminated_time;
-		waiting_time -= p_list[i].arrival_time;
-		waiting_time -= p_list[i].CPU_burst_time;
+		waiting_time += p_list[i].waiting_time;
 	}
 	printf("Average Turnarround time: %d\n", turnarround_time / num);
 	printf("Average Waiting time: %d\n\n\n", waiting_time / num);
@@ -149,4 +147,14 @@ void	print_job_queue(void)
 		printf("|  %d  |  %4d |   %3d    |    %2d    |    %2d    |      %2d      |\n", i, p_list[i].pid, p_list[i].priority, p_list[i].CPU_burst_time, p_list[i].IO_burst_time, p_list[i].arrival_time);
 	}
 	printf("---------------------------------------------------------------\n");
+}
+
+void update_waiting_time(void)
+{
+	int j;
+	for (int i = 0; i < ready_queue.size; i++)
+	{
+		j = ready_queue.queue[i];
+		p_list[j].waiting_time += 1;
+	}
 }

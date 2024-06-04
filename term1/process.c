@@ -10,6 +10,7 @@ void	Create_Process(void)
 		p_list[i].IO_burst_time = rand() % 5;
 		p_list[i].arrival_time = rand() % 5;
 		p_list[i].priority = rand() % (num * 2);
+		p_list[i].waiting_time = 0;
 	}
 	print_processes();
 }
@@ -57,6 +58,7 @@ void	Config(void)
 		p_list[i].IO_rest = p_list[i].IO_burst_time;
 		p_list[i].rr_time = 0;
 		p_list[i].terminated_time = 0;
+		p_list[i].waiting_time = 0;
 	}
 	job_queue.size = num;
 	

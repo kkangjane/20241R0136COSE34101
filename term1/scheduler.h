@@ -33,6 +33,7 @@ typedef struct s_process
     int     arrival_time;
     int     priority;
 	int		rr_time;
+	int 	waiting_time;
 	int		terminated_time;
 } t_process;
 
@@ -82,4 +83,6 @@ int		queue_pop(t_queue *queue);
 int		queue_pop_SJF(int pop);
 int		queue_pop_priority(int pop);
 void	print_job_queue(void);
+void	update_waiting_time(void);
+
 #endif

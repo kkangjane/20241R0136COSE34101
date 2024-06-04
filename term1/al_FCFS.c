@@ -24,8 +24,9 @@ void	FCFS_scheduling()
 		io_chart[t] = Do_IO(0);
 		if (io_chart[t] >= 0)
 			io_check -= 1;
-		random_io_out();
 
+		update_waiting_time();
+		random_io_out();
 		t++;
 	}
 	print_result(cpu_chart, io_chart, cpu_check, io_check, t);

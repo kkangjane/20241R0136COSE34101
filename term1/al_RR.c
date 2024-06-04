@@ -23,6 +23,8 @@ void	RR_scheduling()
 		io_chart[t] = Do_IO(0);
 		if (io_chart[t] >= 0)
 			io_check -= 1;
+		
+		update_waiting_time();
 		random_io_out();
 		t++;
 	}
